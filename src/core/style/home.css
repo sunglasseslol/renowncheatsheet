@@ -1,0 +1,54 @@
+@import url("https://use.typekit.net/kji3kyb.css");
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&display=swap');
+
+:root {
+    --linkcolor: #FFACE4;
+}
+
+* {
+    /* font-family: open-sans, sans-serif; */
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 200;
+    margin: 0px;
+    padding: 0px;
+}
+
+#renownimg {
+    width: 50%;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#sheets {
+    margin-top: 25px;
+    background-color: #121212;
+    width: 37%;
+    height: 300px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 25px;
+    padding-top: 10px;
+}
+
+#title {
+    text-align: center;
+    font-size: 50px;
+    font-weight: 400;
+}
+
+#title a {
+    font-size: 50px;
+}
+
+.sheetlinks {
+    color: var(--linkcolor);
+    text-decoration: none;
+    width: 100%;
+}
+
+#renowncom {
+    text-align: center;
+    color: var(--linkcolor);
+}
