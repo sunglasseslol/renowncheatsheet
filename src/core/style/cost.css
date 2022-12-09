@@ -1,0 +1,61 @@
+@import url("https://use.typekit.net/kji3kyb.css");
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&display=swap');
+
+:root {
+    --linkcolor: #FFACE4;
+}
+
+* {
+    font-family: "JetBrains Mono";
+    color: white;
+}
+
+#costs {
+    background-color: #121212;
+    height: 500px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 150px;
+    font-family: "JetBrains Mono";
+}
+
+.changecostbtn {
+    width: 33.3%;
+    height: 50px;
+    color: var(--linkcolor);
+    background-color: #31313131;
+    border-color: #212121;
+    font-size: 25px;
+    float: left;
+    transition: .25s;
+    border-style: none;
+}
+
+.changecostbtn:hover {
+    transition: .25s;
+    border-color: #212121;
+    background-color: #414141;
+}
+
+.changecostbtn:focus {
+    transition: .25s;
+    border-color: #212121;
+    background-color: #414141;
+}
+
+#stonebtn {
+    border-top: 0px;
+    border-left: 0px;
+}
+
+#ironbtn {
+    border-top: 0px;
+    border-left: 0px;
+}
+
+#steelbtn {
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+}

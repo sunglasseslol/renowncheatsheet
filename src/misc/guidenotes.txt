@@ -1,0 +1,15 @@
+Cost to craft stone tools (complete set):
+
+stone: 50
+fiber: 100
+wood: 100
+
+Cost to craft iron tools (complete set):
+
+iron (ingots): 75
+wood: 370
+cloth: 40
+
+Cost to craft steel tools (complete set):
+
+steel: ~60
