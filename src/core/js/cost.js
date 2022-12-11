@@ -3,6 +3,7 @@
 stoneToolsBtn = document.getElementById('stoneBtn')
 ironToolsBtn = document.getElementById('ironBtn')
 steelToolsBtn = document.getElementById('steelBtn')
+backBtn = document.getElementById('backBtn')
 resetBtn = document.getElementById('resetBtn')
 
 root = document.getElementById("costs")
@@ -11,6 +12,10 @@ const rootContainer = document.createElement("div")
 rootContainer.className = "costs"
 
 root.appendChild(rootContainer)
+
+function backToIndex() {
+    location.href = "index.html"
+}
 
 function reset() {
     rootContainer.innerHTML = ""
@@ -25,6 +30,7 @@ function showStoneCosts() {
     
     rootContainer.innerHTML = `
         <ul class="costList" id="stoneCostList">
+        Stone Tools
             <li>Wood: <span style="color: #FFACE4">${wood}</span></li>
             <li>Fiber: <span style="color: #FFACE4">${fiber}</span></li>
             <li>Stone: <span style="color: #FFACE4">${stone}</span></li>
@@ -43,6 +49,7 @@ function showIronCosts() {
 
     rootContainer.innerHTML = `
         <ul class="costList" id="ironCostList">
+        Iron Tools
             <li>Wood: <span style="color: #FFACE4">${wood}</span></li>
             <li>Cloth: <span style="color: #FFACE4">${cloth}</span></li>
             <li>Iron: <span style="color: #FFACE4">${ironIngots}</span></li>
@@ -56,12 +63,15 @@ function showIronCosts() {
 function showSteelCosts() {
     console.warn("STEELBTN CLICKED")
 
-    const steel = 60
+    const steel = 75
+    const wood = 370
+    const cloth = 50
 
     rootContainer.innerHTML = `
         <ul class="costList" id="steelCostList">
-            <li>PLACEHOLDER: <span style="color: #FFACE4"></span></li>
-            <li>PLACEHOLDER: <span style="color: #FFACE4"></span></li>
+        Steel Tools
+            <li>Wood <span style="color: #FFACE4">${wood}</span></li>
+            <li>Cloth: <span style="color: #FFACE4">${cloth}</span></li>
             <li>Steel: <span style="color: #FFACE4">${steel}</span></li>
             <br>
             Requirements: <br>
@@ -85,4 +95,8 @@ steelToolsBtn.addEventListener(
 resetBtn.addEventListener(
     "click",
     reset
+)
+backBtn.addEventListener(
+    "click",
+    backToIndex
 )

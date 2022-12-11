@@ -23,7 +23,7 @@ body {
 #costs {
     display: block;
     background-color: #121212;
-    height: 500px;
+    height: 540px;
     width: 50%;
     margin-left: auto;
     margin-right: auto;
@@ -31,7 +31,12 @@ body {
     font-family: "JetBrains Mono";
 }
 
-#resetBtn {
+#backBtn {
+    color: var(--linkcolor);
+    text-decoration: none;
+}
+
+.miscBtn {
     margin: 10px 0px 0px 10px;
     width: 100px;
     height: 50px;
@@ -42,7 +47,7 @@ body {
     border-style: none;
 }
 
-#resetBtn:hover {
+.miscBtn:hover {
     background-color: #414141;
     transition: .25s;
 }
