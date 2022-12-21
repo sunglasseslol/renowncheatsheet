@@ -14,22 +14,22 @@
         <select id="weapons" class="dropdown">
             <option selected style="display:none">Weapons</option>
             <option class="dropdown-title" disabled>TIER 1</option>
-            <option class="dropdown-option">Cudgel</option>
+            <option class="dropdown-option" id="t1Cudgel">Cudgel</option>
             <option class="dropdown-title" disabled>TIER 2</option>
-            <option class="dropdown-option">Messer</option>
+            <option class="dropdown-option" id="t2Messer">Messer</option>
             <option class="dropdown-title" disabled>TIER 3</option>
-            <option class="dropdown-option">Longsword</option>
-            <option class="dropdown-option">Grossmesser</option>
-            <option class="dropdown-option">Halberd</option>
-            <option class="dropdown-option">Greatsword</option>
+            <option class="dropdown-option" id="t3Longsword">Longsword</option>
+            <option class="dropdown-option" id="t3Messer">Grossmesser</option>
+            <option class="dropdown-option" id="t3Halberd">Halberd</option>
+            <option class="dropdown-option" id="t3Greatsword">Greatsword</option>
             <option class="dropdown-title" disabled>Shields</option>
-            <option class="dropdown-option">Buckler</option>
-            <option class="dropdown-option">Pavise Shield</option>
-            <option class="dropdown-option">Kite Shield</option>
+            <option class="dropdown-option" id="sBuckler">Buckler</option>
+            <option class="dropdown-option" id="sPaviseShiel">Pavise Shield</option>
+            <option class="dropdown-option" id="sKiteShield">Kite Shield</option>
             <option class="dropdown-title" disabled>Bows</option>
-            <option class="dropdown-option">Shortbow</option>
-            <option class="dropdown-option">Longbow</option>
-            <option class="dropdown-option">Warbow</option>
+            <option class="dropdown-option" id="bShortbow">Shortbow</option>
+            <option class="dropdown-option" id="bLongbow">Longbow</option>
+            <option class="dropdown-option" id="bWarbow">Warbow</option>
         </select>
         <select id="tools" class="dropdown">
             <option selected style="display:none">Tools</option>
@@ -79,9 +79,11 @@
         </select>
     </div> <br>
     <div id="display">
-        <button class="miscBtn" id="backBtn">Back to Home</button>
+        <!-- <button class="miscBtn" id="backBtn">Back to Home</button> 
+        <span id="divider">|</span>
+        <button class="miscBtn" id="resetBtn">Reload Page</button> -->
     </div> <br>
 </body>
 <script src="../js/wiki.js"></script>
-<script src="/src/misc/_.js"></script>
+<script src="/src/misc/global.js"></script>
 </html> 

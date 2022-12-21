@@ -10,15 +10,15 @@
     --bg2: #11111111;
 }
 
-option:disabled {
-    color: #FFACE3;
-}
-
 #display {
     margin-left: 660px;
     width: 600px;
     height: 800px;
     background-color: var(--bg1);
+}
+
+select {
+    text-align-last: center;
 }
 
 .dropdown {
@@ -31,7 +31,7 @@ option:disabled {
     padding: 0px;
     margin: 0px;
     float: left;
-    text-align: center;
+    text-align: left;
 }
 
 .dropdown-title {
@@ -45,16 +45,45 @@ option:disabled {
 }
 
 option:checked {
-    color: var(--linkcolor)
+    color: var(--linkcolor);
 }
 
+
+option:disabled {
+    color: #FFACE3;
+}
+
+
 #backBtn {
-    width: 195px;
+    width: 210px;
     height: 45px;
     color: var(--linkcolor);
     margin-top: 745px;
 }
+
+#statsImg {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-top: 15px;
+}
+
+#resetBtn {
+    width: 200px;
+    height: 45px;
+    margin-left: 68px;
+}
+
 .miscBtn:hover {
     background-color: #414141;
     transition: .25s;
+}
+
+
+/* FOR JS */
+
+#statsContainer {
+    height: 100px;
+    width: 100px;
+    background-color: black;
 }
