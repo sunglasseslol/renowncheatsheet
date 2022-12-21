@@ -2,7 +2,7 @@ const backBtn = document.getElementById('backBtn')
 const resetBtn = document.getElementById('resetBtn')
 
 function backToIndex() {
-    location.href = "index.html"
+    location.href = ""
 }
 
 function reset() {
