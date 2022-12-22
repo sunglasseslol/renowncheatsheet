@@ -20,7 +20,7 @@ const topbar = document.getElementById('topbar')
 const display = document.getElementById('display')
 
 function getHtmlForStats(elem) {
-    const baseImageLoc = "/misc/imgs/wiki/items/"
+    const baseImageLoc = "/src/misc/imgs/wiki/items/"
     const item = elem
     const itemId = item.id
 
