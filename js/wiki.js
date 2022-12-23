@@ -19,23 +19,31 @@ const t1Wall = document.getElementById('t1Wall')
 const topbar = document.getElementById('topbar')
 const display = document.getElementById('display')
 
-function getHtmlForStats(elem) {
-    const baseImageLoc = "/imgs/wiki/items/"
-    const item = elem
+function getHtmlForStats(itemToShow) {
+    const baseImageLoc = "/imgs/icons/wiki/items/weapons/"
+    // weapons/Messer.png
+    const item = itemToShow
     const itemId = item.id
+    const type = "NULL";
 
-    for(_ = 0; _ < 5; _++) {console.log(itemId)}
+    const itemName = item.innerHTML
+
+    // if(item.contains('Pickaxe')) { console.log("HIII") }
+
+    // for(_ = 0; _ < 5; _++) {console.log(itemId)}
     
     let imageLoc = `${baseImageLoc}` + `${itemId}` + '.png'
 
     const baseHtml = `
         <img id="statsImg" src="${imageLoc}">
 
-        <ul class="costList" id="stoneCostList">
-        Stone Tools
+        <ul class="statsItem">
+        <span id="itemName">${itemName}</span>
+        <br>
             <li>Damage: <span style="color: #FFACE4"></span></li>
             <li>Resource Gain: <span style="color: #FFACE4"></span></li>
-            <li>: <span style="color: #FFACE4"></span></li>
+            
+            This ${type}
             <br>
             Requirements: <br>
             <span style="color: #FFACE4">●</span> No Requirements
@@ -54,32 +62,38 @@ main()
 function check() {
     // console.log('CHANGE')
 
-    displayTool()
-    getHtmlForStats(t2Messer)
+    displayTools()
 }
 
-function displayTool() {
-    toolToDisplay = tools.value
+// function displayTool(selected) {
+//     toolToDisplay = selected.value
 
-    // console.log(toolToDisplay)
+//     // console.log(toolToDisplay)
 
-    let statWall = `${toolToDisplay}` + "Id"
-    // getHtmlForStats(t2Messer)
+//     let statWall = `${toolToDisplay}` + "Id"
+//     // getHtmlForStats(t2Messer)
 
-    toolRemoveWhitespace = statWall.replace(/\s/g, '')
-    console.log(toolRemoveWhitespace)
-}
+//     toolRemoveWhitespace = statWall.replace(/\s/g, '')
+//     console.log(toolRemoveWhitespace)
+
+//     getHtmlForStats(toolRemoveWhitespace)
+// }
+
+
+
 //TEST FUNCTION MAY BE USED IN FUTURE
-function displayTools(type) {
-    itemToDisplay = type.value
+function displayTools() {
+    // itemToDisplay = type.value
 
     // console.log(toolToDisplay)
 
-    let statWall = `${itemToDisplay}` + "Id"
-    getHtmlForStats()
+    // let statWall = `${itemToDisplay}` + "Id"
+    // getHtmlForStats()
 
-    itemRemoveWhitespace = statWall.replace(/\s/g, '')
-    // console.log(itemRemoveWhitespace)
+    // itemRemoveWhitespace = statWall.replace(/\s/g, '')
+    // // console.log(itemRemoveWhitespace)
+
+    getHtmlForStats(t2Messer)
 }
 
 weapons.addEventListener(
