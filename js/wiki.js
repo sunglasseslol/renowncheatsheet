@@ -19,18 +19,97 @@ const t1Wall = document.getElementById('t1Wall')
 const topbar = document.getElementById('topbar')
 const display = document.getElementById('display')
 
-function getHtmlForStats(itemToShow) {
+// JSON Objects
+let weaponsJson = {
+    "2": "t1Cudgel",
+    "4": "t2Messer",
+    "6": "t3Longsword",
+    "7": "t3Messer",
+    "8": "t3Halberd",
+    "9": "t3Greatsword",
+    "11": "sBuckler",
+    "12": "sPaviseShield",
+    "13": "sKiteShield",
+    "15": "bShortbow",
+    "16": "bLongbow",
+    "17": "bWarbow"
+}
+
+let toolsJson = {
+    "2": "t1Pick",
+    "3": "t1Axe",
+    "4": "t1Hoe",
+    "5": "t1Mallet",
+    "6": "t1CKnife",
+    "8": "t2Pick",
+    "9": "t2Axe",
+    "10": "t2Hoe",
+    "11": "t2Mallet",
+    "12": "t2CKnife",
+    "14": "t3Pick",
+    "15": "t3Axe",
+    "16": "t3Hoe",
+    "17": "t3Mallet",
+    "18": "t3CKnife"
+}
+
+let placeablesJson = {
+    "2": "t1Furnace",
+    "3": "t2Furnace",
+    "4": "t3Furnace"
+}
+
+let buildingsJson = {
+    "2": "t1Foundation",
+    "3": "t1Wall",
+    "4": "t1Roof",
+    "5": "t1TRoof",
+    "6": "t2Foundation",
+    "8": "t2Wall",
+    "9": "t2Roof",
+    "10": "t2TRoof",
+    "11": "t3Foundation",
+    "12": "t3Wall",
+    "14": "t3Roof",
+    "15": "t3TRoof",
+}
+
+
+function main() {
+    console.warn("wiki.js loaded")
+}
+
+main()
+
+function checkWeapons() {
+    let selectedItem = weapons.selectedIndex
+
+    getHtmlForStats(weaponsJson[selectedItem], 'weapon')
+}
+function checkTools() {
+    let selectedItem = tools.selectedIndex
+
+    getHtmlForStats(toolsJson[selectedItem], 'tool')
+}
+function checkPlaceables() {
+    let selectedItem = placeables.selectedIndex
+
+    getHtmlForStats(placeablesJson[selectedItem], 'placeable')
+}
+function checkBuildings() {
+    let selectedItem = buildings.selectedIndex
+
+    getHtmlForStats(buildingsJson[selectedItem],'building')
+}
+
+function getHtmlForStats(itemToShow, type) {
     const baseImageLoc = "/imgs/icons/wiki/items/weapons/"
     // weapons/Messer.png
+
     const item = itemToShow
-    const itemId = item.id
-    const type = "NULL";
+    const itemId = item.value
 
-    const itemName = item.innerHTML
-
-    // if(item.contains('Pickaxe')) { console.log("HIII") }
-
-    // for(_ = 0; _ < 5; _++) {console.log(itemId)}
+    const itemName = type.innerHTML
     
     let imageLoc = `${baseImageLoc}` + `${itemId}` + '.png'
 
@@ -42,8 +121,7 @@ function getHtmlForStats(itemToShow) {
         <br>
             <li>Damage: <span style="color: #FFACE4"></span></li>
             <li>Resource Gain: <span style="color: #FFACE4"></span></li>
-            
-            This ${type}
+        
             <br>
             Requirements: <br>
             <span style="color: #FFACE4">●</span> No Requirements
@@ -53,65 +131,22 @@ function getHtmlForStats(itemToShow) {
     display.innerHTML = baseHtml
 }
 
-function main() {
-    console.warn("wiki.js loaded")
-}
-
-main()
-
-function check() {
-    // console.log('CHANGE')
-
-    displayTools()
-}
-
-// function displayTool(selected) {
-//     toolToDisplay = selected.value
-
-//     // console.log(toolToDisplay)
-
-//     let statWall = `${toolToDisplay}` + "Id"
-//     // getHtmlForStats(t2Messer)
-
-//     toolRemoveWhitespace = statWall.replace(/\s/g, '')
-//     console.log(toolRemoveWhitespace)
-
-//     getHtmlForStats(toolRemoveWhitespace)
-// }
-
-
-
-//TEST FUNCTION MAY BE USED IN FUTURE
-function displayTools() {
-    // itemToDisplay = type.value
-
-    // console.log(toolToDisplay)
-
-    // let statWall = `${itemToDisplay}` + "Id"
-    // getHtmlForStats()
-
-    // itemRemoveWhitespace = statWall.replace(/\s/g, '')
-    // // console.log(itemRemoveWhitespace)
-
-    getHtmlForStats(t2Messer)
-}
-
 weapons.addEventListener(
     'change',
-    check
+    checkWeapons
 )
 
 tools.addEventListener(
     'change',
-    check
+    checkTools
 )
 
 placeables.addEventListener(
     'change',
-    check
+    checkPlaceables
 )
 
 buildings.addEventListener(
     'change',
-    check
+    checkBuildings
 )
