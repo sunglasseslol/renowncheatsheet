@@ -84,34 +84,35 @@ main()
 function checkWeapons() {
     let selectedItem = weapons.selectedIndex
 
-    getHtmlForStats(weaponsJson[selectedItem], 'weapon')
+    getHtmlForStats(weaponsJson[selectedItem], 'weapons')
 }
 function checkTools() {
     let selectedItem = tools.selectedIndex
 
-    getHtmlForStats(toolsJson[selectedItem], 'tool')
+    getHtmlForStats(toolsJson[selectedItem], 'tools')
 }
 function checkPlaceables() {
     let selectedItem = placeables.selectedIndex
 
-    getHtmlForStats(placeablesJson[selectedItem], 'placeable')
+    getHtmlForStats(placeablesJson[selectedItem], 'placeables')
 }
 function checkBuildings() {
     let selectedItem = buildings.selectedIndex
 
-    getHtmlForStats(buildingsJson[selectedItem],'building')
+    getHtmlForStats(buildingsJson[selectedItem])
 }
 
 function getHtmlForStats(itemToShow, type) {
-    const baseImageLoc = "/imgs/icons/wiki/items/weapons/"
-    // weapons/Messer.png
+    const baseImageLoc = `/imgs/icons/wiki/items/${type}/`
 
     const item = itemToShow
-    const itemId = item.value
+    const itemName = document.getElementById(item).innerHTML
+    console.log(itemName)
 
-    const itemName = type.innerHTML
+    const dmg = 0;
+    const resourceGain = 0;
     
-    let imageLoc = `${baseImageLoc}` + `${itemId}` + '.png'
+    let imageLoc = `${baseImageLoc}` + `${itemName}` + '.png'
 
     const baseHtml = `
         <img id="statsImg" src="${imageLoc}">
@@ -119,7 +120,7 @@ function getHtmlForStats(itemToShow, type) {
         <ul class="statsItem">
         <span id="itemName">${itemName}</span>
         <br>
-            <li>Damage: <span style="color: #FFACE4"></span></li>
+            <li>Damage: <span style="color: #FFACE4">${dmg}</span></li>
             <li>Resource Gain: <span style="color: #FFACE4"></span></li>
         
             <br>
