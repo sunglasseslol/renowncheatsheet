@@ -22,7 +22,7 @@ select {
 }
 
 .dropdown {
-    width: 480px;
+    width: 384px;
     height: 75px;
     background-color: var(--bg1);
     border: none;
