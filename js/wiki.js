@@ -144,6 +144,32 @@ let buildingsJson = {
     "15": "t3TRoof",
 }
 
+function getHtmlForStats(itemToShow, type, resourceGain, damage) {
+    const baseImageLoc = `../imgs/icons/wiki/items/${type}/`
+
+    const item = itemToShow
+    const itemName = document.getElementById(item).innerHTML
+
+    const dmg = damage;
+    const gain = resourceGain;
+
+    let imageLoc = `${baseImageLoc}` + `${itemName}` + '.png'
+
+    const baseHtml = `
+        <img id="statsImg" src="${imageLoc}">
+
+        <ul class="statsItem">
+        <span id="itemName">${itemName}</span> <br>
+
+        <li id="damage">Damage: <span style="color: #FFACE4">${dmg}</span></li>
+        <li id="resourceGain">Resource Gain: <span style="color: #FFACE4">${gain}</span></li>
+        
+        <br>
+        </ul>
+    `
+
+    display.innerHTML = baseHtml
+}
 
 function main() {
     console.warn("wiki.js loaded")
@@ -175,36 +201,6 @@ function checkBuildings() {
     let selectedItem = buildings.selectedIndex
 
     getHtmlForStats(buildingsJson[selectedItem], 'building', 0, 0)
-}
-
-function getHtmlForStats(itemToShow, type, resourceGain, damage) {
-    const baseImageLoc = `../imgs/icons/wiki/items/${type}/`
-
-    const item = itemToShow
-    const itemName = document.getElementById(item).innerHTML
-    console.log(itemName)
-
-    const dmg = damage;
-    const gain = resourceGain;
-
-    let imageLoc = `${baseImageLoc}` + `${itemName}` + '.png'
-
-    const baseHtml = `
-        <img id="statsImg" src="${imageLoc}">
-
-        <ul class="statsItem">
-        <span id="itemName">${itemName}</span>
-        <br>
-            <li id="damage">Damage: <span style="color: #FFACE4">${dmg}</span></li>
-            <li id="resourceGain">Resource Gain: <span style="color: #FFACE4">${gain}</span></li>
-        
-            <br>
-            Requirements: <br>
-            <span style="color: #FFACE4">●</span> No Requirements
-        </ul>
-    `
-
-    display.innerHTML = baseHtml
 }
 
 weapons.addEventListener(
