@@ -178,7 +178,7 @@ function checkBuildings() {
 }
 
 function getHtmlForStats(itemToShow, type, resourceGain, damage) {
-    const baseImageLoc = `/imgs/icons/wiki/items/${type}/`
+    const baseImageLoc = `../imgs/icons/wiki/items/${type}/`
 
     const item = itemToShow
     const itemName = document.getElementById(item).innerHTML
